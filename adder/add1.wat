@@ -1,8 +1,8 @@
 (module
-    (func $add (param $left i32) (param $right i32) (result i32)
+    (func $add (param $lf i32) (param $rt i32) (result i32)
         (i32.add
-            (get_local $left)
-            (get_local $right)
+            (local.get $lf)
+            (local.get $rt)
         )
     )
     (export "add" (func $add))
