@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40bdf934-9654-43fc-b32c-45a951ffa21c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/tailwind/base.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/checkers/func_test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/checkers/tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PP.wasm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adder/add1.wasm" beforeDir="false" afterPath="$PROJECT_DIR$/src/adder/add1.wasm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adder/add1.wat" beforeDir="false" afterPath="$PROJECT_DIR$/src/adder/add1.wat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkers/checkers.wat" beforeDir="false" afterPath="$PROJECT_DIR$/src/checkers/checkers.wat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkers/checkers.wat.wasm" beforeDir="false" afterPath="$PROJECT_DIR$/src/checkers/checkers.wat.wasm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/checkers/checkers.wat" beforeDir="false" afterPath="$PROJECT_DIR$/src/checkers/checkers.wat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/checkers/checkers.wat.wasm" beforeDir="false" afterPath="$PROJECT_DIR$/src/checkers/checkers.wat.wasm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/checkers/tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/checkers/tests.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +33,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="i0wc8c6b" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -52,20 +50,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "dart.analysis.tool.window.visible": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "org.elm.workspace.PROJECT_DISCOVERY": "true",
-    "show.migrate.to.gradle.popup": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;org.elm.workspace.PROJECT_DISCOVERY&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/assets/tailwind" />
@@ -80,7 +79,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1657804379091</updated>
-      <workItem from="1657804380992" duration="7624000" />
+      <workItem from="1657804380992" duration="16560000" />
+      <workItem from="1657956857978" duration="5741000" />
     </task>
     <servers />
   </component>
