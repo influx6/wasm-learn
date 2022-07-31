@@ -2,7 +2,12 @@
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/rustwasmhello/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/rustycheckers/src" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/rustwasmhello/target" />
+      <excludeFolder url="file://$MODULE_DIR$/rustycheckers/target" />
+    </content>
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
