@@ -4,13 +4,13 @@ extern crate lazy_static;
 mod board;
 mod game;
 
-use board::{Coordinate, GamePiece, Move, PieceColor};
+use board::{Coordinate, GamePiece, Move};
 use game::GameEngine;
 use mut_static::MutStatic;
 use crate::game::MoveResult;
 
 lazy_static! {
-    pub static ref GAME_ENGINE: MutStatic<GameEngine> = { MutStatic::from(GameEngine::new())};
+    pub static ref GAME_ENGINE: MutStatic<GameEngine> =  MutStatic::from(GameEngine::new());
 }
 
 // expose two methods: get_piece, move_piece and get_current_turn as webassembly functions.
@@ -26,7 +26,7 @@ pub extern "C" fn get_piece(x: i32, y:i32) -> i32 {
 
     let piece = engine.get_piece(Coordinate(x as usize, y as usize));
     match piece {
-        OK(Some(p)) => p.into(),
+        Ok(Some(p)) => p.into(),
         Ok(None) => -1,
         Err(_) => -1,
     }
@@ -47,11 +47,11 @@ pub extern "C" fn move_piece(fx: i32, fy: i32, tx: i32, ty: i32) -> i32 {
     match res {
         Ok(mr ) => {
             unsafe {
-                notify_piecemoved(fromX: fx, fromY: fy, toX: tx, toY: ty);
+                notify_piecemoved( fx,  fy, tx, ty);
             }
             if mr.crowned {
                 unsafe {
-                    notify_piececrowned(x: tx, y: ty);
+                    notify_piececrowned(tx, ty);
                 }
             }
             1

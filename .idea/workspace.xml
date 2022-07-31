@@ -9,16 +9,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40bdf934-9654-43fc-b32c-45a951ffa21c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/google-java-format.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/magento2plugin.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rustycheckers/demo/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rustycheckers/demo/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rustwasmhello/target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/rustwasmhello/target/.rustc_info.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rustycheckers/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/rustycheckers/Cargo.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rustycheckers/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/rustycheckers/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rustycheckers/src/board.rs" beforeDir="false" afterPath="$PROJECT_DIR$/rustycheckers/src/board.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rustycheckers/src/game.rs" beforeDir="false" afterPath="$PROJECT_DIR$/rustycheckers/src/game.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rustycheckers/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/rustycheckers/src/lib.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,7 +76,7 @@
     "dart.analysis.tool.window.visible": "false",
     "go.import.settings.migrated": "true",
     "js.ns.project": "true",
-    "last_opened_file_path": "/Users/alexewetumo/Labs/wasm-learn",
+    "last_opened_file_path": "/Users/alexewetumo/Labs/wasm-learn/rustycheckers/demo",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -97,6 +90,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/rustycheckers/demo" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/assets/tailwind" />
       <recent name="$PROJECT_DIR$/src" />
@@ -123,7 +119,7 @@
       <workItem from="1659176866015" duration="771000" />
       <workItem from="1659177698399" duration="642000" />
       <workItem from="1659247967238" duration="731000" />
-      <workItem from="1659276231040" duration="1709000" />
+      <workItem from="1659276231040" duration="2256000" />
     </task>
     <servers />
   </component>
