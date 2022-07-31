@@ -9,11 +9,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40bdf934-9654-43fc-b32c-45a951ffa21c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rustycheckers/src/board.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rustycheckers/src/game.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/google-java-format.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/magento2plugin.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wasm-learn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/wasm-learn.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustwasmhello/target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/rustwasmhello/target/.rustc_info.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/rustycheckers/Cargo.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/rustycheckers/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/src/board.rs" beforeDir="false" afterPath="$PROJECT_DIR$/rustycheckers/src/board.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/src/game.rs" beforeDir="false" afterPath="$PROJECT_DIR$/rustycheckers/src/game.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/rustycheckers/src/lib.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +28,9 @@
   </component>
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
   </component>
   <component name="ElmWorkspace">
     <elmProjects />
@@ -39,6 +48,9 @@
   </component>
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="true" />
+  </component>
+  <component name="KubernetesApiPersistence">
+    <option name="context" value="k0s" />
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="i0wc8c6b" />
@@ -66,18 +78,22 @@
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
     "RunOnceActivity.go.migrated.go.modules.settings": "true",
     "RunOnceActivity.go.watchers.conflict.with.on.save.actions.check.performed": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "dart.analysis.tool.window.visible": "false",
     "go.import.settings.migrated": "true",
-    "last_opened_file_path": "/usr/bin",
+    "js.ns.project": "true",
+    "last_opened_file_path": "/Users/alexewetumo/Labs/wasm-learn",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "org.elm.workspace.PROJECT_DISCOVERY": "true",
     "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
     "settings.editor.selected.configurable": "language.rust",
-    "show.migrate.to.gradle.popup": "false"
+    "show.migrate.to.gradle.popup": "false",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -107,11 +123,23 @@
       <workItem from="1659176866015" duration="771000" />
       <workItem from="1659177698399" duration="642000" />
       <workItem from="1659247967238" duration="731000" />
+      <workItem from="1659276231040" duration="1709000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

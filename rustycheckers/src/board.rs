@@ -4,7 +4,7 @@ pub enum PieceColor {
     Black,
 }
 
-#[derive(Debug, Copy, Clone, PartialEq)]
+#[derive(Debug, Clone, Copy, PartialEq)]
 pub struct GamePiece {
     pub color: PieceColor,
     pub crowned: bool,
@@ -18,23 +18,48 @@ impl GamePiece {
         }
     }
 
-    pub fn crowned(color: PieceColor) -> GamePiece {
+    pub fn crowned(p: GamePiece) -> GamePiece {
         GamePiece {
-            color,
+            color: p.color,
             crowned: true,
         }
     }
 }
 
-#[derive(Debug, Copy, Clone, PartialEq)]
+const PIECEFLAG_BLACK: u8 = 1;
+const PIECEFLAG_WHITE: u8 = 2;
+const PIECEFLAG_CROWN: u8 = 4;
+
+impl Into<i32> for GamePiece {
+    fn into(self) -> i32 {
+        let mut val: u8 = 0;
+        if self.color == PieceColor::Black {
+            val += PIECEFLAG_BLACK;
+        } else if self.color == PieceColor::White {
+            val += PIECEFLAG_WHITE;
+        }
+
+        if self.crowned {
+            val += PIECEFLAG_CROWN;
+        }
+
+        val as i32
+    }
+}
+
+
+#[derive(Debug, Clone, PartialEq, Copy)]
 pub struct Coordinate(pub usize, pub usize);
 
 impl Coordinate {
+
     pub fn on_board(self) -> bool {
-        let Coordinate(x, y) = self;
+        let Coordinate(x, y) = self; // (1)
         x <= 7 && y <= 7
     }
 
+
+    // (2)
     pub fn jump_targets_from(&self) -> impl Iterator<Item = Coordinate> {
         let mut jumps = Vec::new();
         let Coordinate(x, y) = *self;
@@ -42,6 +67,7 @@ impl Coordinate {
             jumps.push(Coordinate(x + 2, y - 2));
         }
         jumps.push(Coordinate(x + 2, y + 2));
+
         if x >= 2 && y >= 2 {
             jumps.push(Coordinate(x - 2, y - 2));
         }
@@ -51,6 +77,7 @@ impl Coordinate {
         jumps.into_iter()
     }
 
+    // (3)
     pub fn move_targets_from(&self) -> impl Iterator<Item = Coordinate> {
         let mut moves = Vec::new();
         let Coordinate(x, y) = *self;
@@ -68,7 +95,7 @@ impl Coordinate {
     }
 }
 
-#[derive(Debug, Copy, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Copy)]
 pub struct Move {
     pub from: Coordinate,
     pub to: Coordinate,

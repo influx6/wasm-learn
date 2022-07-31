@@ -7,3 +7,5 @@ edition = "2021"
 crate-type = ["cdylib"]
 
 [dependencies]
+mut_static = { version="5.0.0" }
+lazy_static = { version="1.0.2" }
