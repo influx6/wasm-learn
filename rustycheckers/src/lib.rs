@@ -41,7 +41,7 @@ pub extern "C" fn get_current_turn() -> i32 {
 
 #[no_mangle]
 pub extern "C" fn move_piece(fx: i32, fy: i32, tx: i32, ty: i32) -> i32 {
-    let mut engine = GAME_ENGINE.read().unwrap();
+    let mut engine = GAME_ENGINE.write().unwrap();
     let mv: Move = Move::new((fx as usize, fy as usize), (tx as usize, ty as usize));
     let res: Result<MoveResult, ()> = engine.move_piece(&mv);
     match res {

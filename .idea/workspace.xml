@@ -9,10 +9,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40bdf934-9654-43fc-b32c-45a951ffa21c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/rustycheckers/demo/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rustycheckers/demo/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rustycheckers/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/rustycheckers/src/lib.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/target/wasm32-unknown-unknown/release/.fingerprint/rustycheckers-aaea9f16528533e3/output-lib-rustycheckers" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +118,7 @@
       <workItem from="1659176866015" duration="771000" />
       <workItem from="1659177698399" duration="642000" />
       <workItem from="1659247967238" duration="731000" />
-      <workItem from="1659276231040" duration="2256000" />
+      <workItem from="1659276231040" duration="4266000" />
     </task>
     <servers />
   </component>

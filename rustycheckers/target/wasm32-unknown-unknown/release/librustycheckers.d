@@ -1,0 +1,1 @@
+/Users/alexewetumo/Labs/wasm-learn/rustycheckers/target/wasm32-unknown-unknown/release/librustycheckers.rlib: /Users/alexewetumo/Labs/wasm-learn/rustycheckers/src/board.rs /Users/alexewetumo/Labs/wasm-learn/rustycheckers/src/game.rs /Users/alexewetumo/Labs/wasm-learn/rustycheckers/src/lib.rs
