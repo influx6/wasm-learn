@@ -9,9 +9,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40bdf934-9654-43fc-b32c-45a951ffa21c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rustycheckers/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/rustycheckers/src/lib.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rustycheckers/target/wasm32-unknown-unknown/release/.fingerprint/rustycheckers-aaea9f16528533e3/output-lib-rustycheckers" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/rustycheckers/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/target/.rustc_info.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/target/CACHEDIR.TAG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/target/release/.cargo-lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/target/wasm32-unknown-unknown/CACHEDIR.TAG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/target/wasm32-unknown-unknown/release/.cargo-lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/target/wasm32-unknown-unknown/release/.fingerprint/error-chain-3e3400352f140233/dep-lib-error-chain" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/target/wasm32-unknown-unknown/release/.fingerprint/error-chain-3e3400352f140233/invoked.timestamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/target/wasm32-unknown-unknown/release/.fingerprint/error-chain-3e3400352f140233/lib-error-chain" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/target/wasm32-unknown-unknown/release/.fingerprint/error-chain-3e3400352f140233/lib-error-chain.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/target/wasm32-unknown-unknown/release/.fingerprint/lazy_static-46c2629bcfa7962b/dep-lib-lazy_static" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/target/wasm32-unknown-unknown/release/.fingerprint/lazy_static-46c2629bcfa7962b/invoked.timestamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/target/wasm32-unknown-unknown/release/.fingerprint/lazy_static-46c2629bcfa7962b/lib-lazy_static" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/target/wasm32-unknown-unknown/release/.fingerprint/lazy_static-46c2629bcfa7962b/lib-lazy_static.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/target/wasm32-unknown-unknown/release/.fingerprint/mut_static-edb578ef08f709ee/dep-lib-mut_static" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/target/wasm32-unknown-unknown/release/.fingerprint/mut_static-edb578ef08f709ee/invoked.timestamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/target/wasm32-unknown-unknown/release/.fingerprint/mut_static-edb578ef08f709ee/lib-mut_static" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/target/wasm32-unknown-unknown/release/.fingerprint/mut_static-edb578ef08f709ee/lib-mut_static.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/target/wasm32-unknown-unknown/release/.fingerprint/rustycheckers-aaea9f16528533e3/dep-lib-rustycheckers" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/target/wasm32-unknown-unknown/release/.fingerprint/rustycheckers-aaea9f16528533e3/invoked.timestamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/target/wasm32-unknown-unknown/release/.fingerprint/rustycheckers-aaea9f16528533e3/lib-rustycheckers" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/target/wasm32-unknown-unknown/release/.fingerprint/rustycheckers-aaea9f16528533e3/lib-rustycheckers.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/target/wasm32-unknown-unknown/release/deps/error_chain-3e3400352f140233.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/target/wasm32-unknown-unknown/release/deps/lazy_static-46c2629bcfa7962b.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/target/wasm32-unknown-unknown/release/deps/liberror_chain-3e3400352f140233.rlib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/target/wasm32-unknown-unknown/release/deps/liberror_chain-3e3400352f140233.rmeta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/target/wasm32-unknown-unknown/release/deps/liblazy_static-46c2629bcfa7962b.rlib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/target/wasm32-unknown-unknown/release/deps/liblazy_static-46c2629bcfa7962b.rmeta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/target/wasm32-unknown-unknown/release/deps/libmut_static-edb578ef08f709ee.rlib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/target/wasm32-unknown-unknown/release/deps/libmut_static-edb578ef08f709ee.rmeta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/target/wasm32-unknown-unknown/release/deps/librustycheckers-aaea9f16528533e3.rlib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/target/wasm32-unknown-unknown/release/deps/librustycheckers-aaea9f16528533e3.rmeta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/target/wasm32-unknown-unknown/release/deps/mut_static-edb578ef08f709ee.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/target/wasm32-unknown-unknown/release/deps/rustycheckers-aaea9f16528533e3.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/target/wasm32-unknown-unknown/release/librustycheckers.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rustycheckers/target/wasm32-unknown-unknown/release/librustycheckers.rlib" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +152,7 @@
       <workItem from="1659176866015" duration="771000" />
       <workItem from="1659177698399" duration="642000" />
       <workItem from="1659247967238" duration="731000" />
-      <workItem from="1659276231040" duration="4266000" />
+      <workItem from="1659276231040" duration="4347000" />
     </task>
     <servers />
   </component>
