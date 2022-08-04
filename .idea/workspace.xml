@@ -6,11 +6,27 @@
   <component name="CargoProjects">
     <cargoProject FILE="$PROJECT_DIR$/rustwasmhello/Cargo.toml" />
     <cargoProject FILE="$PROJECT_DIR$/rustycheckers/Cargo.toml" />
+    <cargoProject FILE="$PROJECT_DIR$/bindgenhello/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40bdf934-9654-43fc-b32c-45a951ffa21c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bindgenhello/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bindgenhello/Cargo.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bindgenhello/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bindgenhello/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bindgenhello/dist/bindgenhello.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bindgenhello/dist/bindgenhello.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bindgenhello/dist/bindgenhello_bg.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bindgenhello/dist/bindgenhello_bg.wasm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bindgenhello/dist/bindgenhello_bg.wasm.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bindgenhello/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bindgenhello/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bindgenhello/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bindgenhello/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bindgenhello/src/lib.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bindgenhello/webpack.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wasm-learn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/wasm-learn.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +101,7 @@
     "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
     "settings.editor.selected.configurable": "language.rust",
     "show.migrate.to.gradle.popup": "false",
+    "ts.external.directory.path": "/Users/alexewetumo/Library/Application Support/JetBrains/Toolbox/apps/IDEA-U/ch-0/221.6008.13/IntelliJ IDEA.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -93,6 +110,7 @@
       <recent name="$PROJECT_DIR$/rustycheckers/demo" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/bindgenhello/src" />
       <recent name="$PROJECT_DIR$/src/assets/tailwind" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
@@ -119,7 +137,7 @@
       <workItem from="1659177698399" duration="642000" />
       <workItem from="1659247967238" duration="731000" />
       <workItem from="1659276231040" duration="6751000" />
-      <workItem from="1659614241695" duration="305000" />
+      <workItem from="1659614241695" duration="2600000" />
     </task>
     <servers />
   </component>
