@@ -10,23 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40bdf934-9654-43fc-b32c-45a951ffa21c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/bindgenhello/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bindgenhello/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bindgenhello/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bindgenhello/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bindgenhello/dist/bindgenhello.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bindgenhello/dist/bindgenhello.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bindgenhello/dist/bindgenhello_bg.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bindgenhello/dist/bindgenhello_bg.wasm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bindgenhello/dist/bindgenhello_bg.wasm.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bindgenhello/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bindgenhello/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bindgenhello/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bindgenhello/src/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bindgenhello/src/lib.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bindgenhello/webpack.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rotgame/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rotgame/Cargo.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rotgame/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rotgame/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rotgame/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rotgame/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rotgame/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rotgame/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rotgame/src/lib.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rotgame/webpack.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wasm-learn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/wasm-learn.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +85,7 @@
     "go.import.settings.migrated": "true",
     "js.ns.project": "true",
     "js.ns.project.flavor": "JavaScript",
-    "last_opened_file_path": "/Users/alexewetumo/Labs/wasm-learn/rustycheckers/demo",
+    "last_opened_file_path": "/Users/alexewetumo/Labs/wasm-learn",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -107,6 +101,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/rustycheckers/demo" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -137,7 +132,7 @@
       <workItem from="1659177698399" duration="642000" />
       <workItem from="1659247967238" duration="731000" />
       <workItem from="1659276231040" duration="6751000" />
-      <workItem from="1659614241695" duration="2600000" />
+      <workItem from="1659614241695" duration="6516000" />
     </task>
     <servers />
   </component>
