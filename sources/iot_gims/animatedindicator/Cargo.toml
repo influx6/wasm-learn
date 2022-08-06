@@ -1,0 +1,10 @@
+[package]
+name = "animatedindicator"
+version = "0.1.0"
+authors = ["Kevin Hoffman <alothien@gmail.com>"]
+
+[lib]
+crate-type = ["cdylib"]
+
+
+[dependencies]

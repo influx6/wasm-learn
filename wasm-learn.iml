@@ -6,9 +6,11 @@
       <sourceFolder url="file://$MODULE_DIR$/rustwasmhello/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/rustycheckers/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/bindgenhello/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/yewcounter/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/rustwasmhello/target" />
       <excludeFolder url="file://$MODULE_DIR$/rustycheckers/target" />
       <excludeFolder url="file://$MODULE_DIR$/bindgenhello/target" />
+      <excludeFolder url="file://$MODULE_DIR$/yewcounter/target" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
   </component>

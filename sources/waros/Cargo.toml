@@ -1,0 +1,12 @@
+[workspace]
+
+members = [
+  "botengine",
+  "dumbotrs",
+  "consolerunner",
+  "warsdk",
+  "rabbit",
+  "rook"
+]
+
+

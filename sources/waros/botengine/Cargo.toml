@@ -1,0 +1,11 @@
+[package]
+name = "botengine"
+version = "0.1.0"
+authors = ["Your Email <your@mail.com>"]
+edition = "2018"
+
+[dependencies]
+wasmi = "0.4.2"
+rand = "0.6.1"
+nalgebra = "0.16.11"
+approx = "0.3.0"

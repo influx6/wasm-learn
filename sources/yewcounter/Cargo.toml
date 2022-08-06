@@ -1,0 +1,8 @@
+[package]
+name = "yewcounter"
+version = "0.1.0"
+authors = ["Kevin Hoffman <email@address.com"]
+
+[dependencies]
+stdweb = "0.4.2"
+yew = "0.4.0"

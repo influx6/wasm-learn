@@ -1,0 +1,7 @@
+[package]
+name = "wasmi_checkers"
+version = "0.1.0"
+authors = ["Your Name <you@address.com>"]
+
+[dependencies]
+wasmi = "0.4.0"

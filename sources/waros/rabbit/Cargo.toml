@@ -1,0 +1,10 @@
+[package]
+name = "rabbit"
+version = "0.1.0"
+authors = ["Your Name <your@mail.com>"]
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+warsdk = { path = "../warsdk"}

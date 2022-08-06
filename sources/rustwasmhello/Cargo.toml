@@ -1,0 +1,9 @@
+[package]
+name = "rustwasmhello"
+version = "0.1.0"
+authors = ["Your Name <your.email@address.com>"]
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
