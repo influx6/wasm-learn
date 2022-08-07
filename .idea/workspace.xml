@@ -11,15 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40bdf934-9654-43fc-b32c-45a951ffa21c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/wasmi-add/.idea/discord.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wasmi-add/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wasmi-add/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wasmi-add/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wasmi-add/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wasmi-add/src/add1.wasm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wasmi-add/src/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rustwasmhello/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/rustwasmhello/src/lib.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wasmi-add/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/wasmi-add/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +50,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
@@ -92,7 +87,7 @@
     "nodejs_package_manager_path": "npm",
     "org.elm.workspace.PROJECT_DISCOVERY": "true",
     "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
-    "settings.editor.selected.configurable": "language.rust",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "show.migrate.to.gradle.popup": "false",
     "ts.external.directory.path": "/Users/alexewetumo/Library/Application Support/JetBrains/Toolbox/apps/IDEA-U/ch-0/221.6008.13/IntelliJ IDEA.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
@@ -135,6 +130,7 @@
       <workItem from="1659247967238" duration="731000" />
       <workItem from="1659276231040" duration="6751000" />
       <workItem from="1659614241695" duration="16250000" />
+      <workItem from="1659858249172" duration="78000" />
     </task>
     <servers />
   </component>
@@ -162,5 +158,8 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="YamllintSettings">
+    <option name="binPath" value="yamllint" />
   </component>
 </project>
