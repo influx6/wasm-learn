@@ -8,9 +8,32 @@
     <cargoProject FILE="$PROJECT_DIR$/rustycheckers/Cargo.toml" />
     <cargoProject FILE="$PROJECT_DIR$/bindgenhello/Cargo.toml" />
     <cargoProject FILE="$PROJECT_DIR$/yewcounter/Cargo.toml" />
+    <cargoProject FILE="$PROJECT_DIR$/wasmi-checkers/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40bdf934-9654-43fc-b32c-45a951ffa21c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/wasmi-checkers/.idea/aws.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wasmi-checkers/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wasmi-checkers/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wasmi-checkers/.idea/discord.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wasmi-checkers/.idea/google-java-format.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wasmi-checkers/.idea/magento2plugin.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wasmi-checkers/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wasmi-checkers/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wasmi-checkers/.idea/sonarlint/issuestore/4/b/4b569f42a6967dec04275af54f4ca9ab6a4eee64" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wasmi-checkers/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wasmi-checkers/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wasmi-checkers/.idea/wasmi-add.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wasmi-checkers/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wasmi-checkers/Cargo.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wasmi-checkers/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wasmi-checkers/checkers.wat.wasm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wasmi-checkers/src/checkersgame.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wasmi-checkers/src/imports.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wasmi-checkers/src/main.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wasmi-checkers/src/runtime.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wasm-learn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/wasm-learn.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wasmi-add/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/wasmi-add/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,7 +102,7 @@
     "go.import.settings.migrated": "true",
     "js.ns.project": "true",
     "js.ns.project.flavor": "JavaScript",
-    "last_opened_file_path": "/Users/alexewetumo/Labs/wasm-learn/wasmi-add/src",
+    "last_opened_file_path": "/Users/alexewetumo/Labs/wasm-learn/wasmi-checkers/src",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -95,11 +118,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/wasmi-checkers/src" />
+      <recent name="$PROJECT_DIR$/wasmi-checkers" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/wasmi-add/src" />
       <recent name="$PROJECT_DIR$/wasmi-add" />
-      <recent name="$PROJECT_DIR$/yewcounter" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/rustycheckers/demo" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/bindgenhello/src" />
@@ -131,6 +154,9 @@
       <workItem from="1659276231040" duration="6751000" />
       <workItem from="1659614241695" duration="16250000" />
       <workItem from="1659858249172" duration="78000" />
+      <workItem from="1659858510924" duration="55000" />
+      <workItem from="1659858591176" duration="10000" />
+      <workItem from="1659859111311" duration="2389000" />
     </task>
     <servers />
   </component>
