@@ -7,7 +7,7 @@ mod runtime;
 use checkersgame::CheckersGame;
 use std::error::Error;
 
-fn main() -> Result<(), Box<Error>> {
+fn main() -> Result<(), Box<dyn Error>> {
     let mut game = CheckersGame::new("./checkers.wat.wasm");
     game.init()?;
 
