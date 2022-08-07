@@ -11,132 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40bdf934-9654-43fc-b32c-45a951ffa21c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/sources/crosscompiledemo/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/crosscompiledemo/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/crosscompiledemo/src/main.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/fundamentals/add.wasm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/fundamentals/add1.wat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/fundamentals/add2.wat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/fundamentals/add_sexpr.wasm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/fundamentals/roundtrip.wat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/iot_gims/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/iot_gims/animatedindicator/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/iot_gims/animatedindicator/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/iot_gims/animatedindicator/src/lib.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/iot_gims/batteryindicator/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/iot_gims/batteryindicator/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/iot_gims/batteryindicator/src/lib.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/iot_gims/pihost/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/iot_gims/pihost/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/iot_gims/pihost/src/main.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/iot_gims/pihost/src/wasm.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/jsint_bindgenhello/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/jsint_bindgenhello/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/jsint_bindgenhello/bindgenhello.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/jsint_bindgenhello/bindgenhello.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/jsint_bindgenhello/bindgenhello_bg.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/jsint_bindgenhello/bindgenhello_bg.wasm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/jsint_bindgenhello/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/jsint_bindgenhello/build.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/jsint_bindgenhello/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/jsint_bindgenhello/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/jsint_bindgenhello/src/lib.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/jsint_bindgenhello/webpack.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/jsint_roguewasm/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/jsint_roguewasm/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/jsint_roguewasm/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/jsint_roguewasm/build.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/jsint_roguewasm/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/jsint_roguewasm/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/jsint_roguewasm/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/jsint_roguewasm/roguewasm.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/jsint_roguewasm/roguewasm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/jsint_roguewasm/roguewasm_bg.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/jsint_roguewasm/roguewasm_bg.wasm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/jsint_roguewasm/src/lib.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/jsint_roguewasm/webpack.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/rustwasmhello/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/rustwasmhello/src/lib.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/rustycheckers/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/rustycheckers/demo/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/rustycheckers/demo/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/rustycheckers/demo/rustycheckers.wasm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/rustycheckers/src/board.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/rustycheckers/src/game.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/rustycheckers/src/lib.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/signer/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/signer/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/signer/src/main.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/signer2/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/signer2/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/signer2/src/main.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/waros/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/waros/botengine/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/waros/botengine/src/events.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/waros/botengine/src/game/damage.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/waros/botengine/src/game/mod.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/waros/botengine/src/game/motion.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/waros/botengine/src/game/projectiles.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/waros/botengine/src/game/scanner.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/waros/botengine/src/lib.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/waros/botengine/src/runtime.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/waros/consolerunner/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/waros/consolerunner/bots/dumbotrs.wasm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/waros/consolerunner/bots/rabbit.wasm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/waros/consolerunner/bots/rook.wasm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/waros/consolerunner/src/main.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/waros/dumbotrs/.cargo/config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/waros/dumbotrs/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/waros/dumbotrs/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/waros/dumbotrs/src/lib.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/waros/rabbit/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/waros/rabbit/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/waros/rabbit/src/lib.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/waros/rook/.cargo/config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/waros/rook/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/waros/rook/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/waros/rook/src/lib.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/waros/warsdk/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/waros/warsdk/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/waros/warsdk/src/ffi.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/waros/warsdk/src/lib.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/wasmcheckers/checkers.wasm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/wasmcheckers/checkers.wat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/wasmcheckers/distance.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/wasmcheckers/distance.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/wasmcheckers/distance.wasm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/wasmcheckers/distance.wat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/wasmcheckers/empty_module.wasm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/wasmcheckers/empty_module.wat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/wasmcheckers/func_test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/wasmcheckers/func_test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/wasmcheckers/func_test.wasm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/wasmcheckers/func_test.wat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/wasmcheckers/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/wasmcheckers/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/wasmi_add/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/wasmi_add/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/wasmi_add/src/main.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/wasmi_checkers/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/wasmi_checkers/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/wasmi_checkers/src/checkersgame.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/wasmi_checkers/src/imports.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/wasmi_checkers/src/main.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/wasmi_checkers/src/runtime.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/yew_wasmchat/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/yew_wasmchat/src/lib.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/yew_wasmchat/src/main.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/yew_wasmchat/src/services.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/yew_wasmchat/static/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/yew_wasmchat/static/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/yewcounter/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/yewcounter/src/lib.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/yewcounter/src/main.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yewcounter/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yewcounter/src/lib.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yewcounter/src/main.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wasm-learn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/wasm-learn.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,7 +123,7 @@
       <workItem from="1659177698399" duration="642000" />
       <workItem from="1659247967238" duration="731000" />
       <workItem from="1659276231040" duration="6751000" />
-      <workItem from="1659614241695" duration="11854000" />
+      <workItem from="1659614241695" duration="14897000" />
     </task>
     <servers />
   </component>
