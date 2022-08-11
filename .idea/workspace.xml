@@ -12,8 +12,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40bdf934-9654-43fc-b32c-45a951ffa21c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/iot_gims/Cargo.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iot_gims/animatedindicator/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iot_gims/animatedindicator/Cargo.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iot_gims/animatedindicator/src/lib.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iot_gims/batteryindicator/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iot_gims/batteryindicator/Cargo.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iot_gims/batteryindicator/src/lib.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iot_gims/pihost/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iot_gims/pihost/Cargo.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iot_gims/pihost/src/main.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iot_gims/pihost/src/wasm.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wasmi-checkers/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/wasmi-checkers/src/main.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +91,7 @@
     "go.import.settings.migrated": "true",
     "js.ns.project": "true",
     "js.ns.project.flavor": "JavaScript",
-    "last_opened_file_path": "/Users/alexewetumo/Labs/wasm-learn/wasmi-checkers/src",
+    "last_opened_file_path": "/Users/alexewetumo/Labs/wasm-learn",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -97,9 +107,9 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/wasmi-checkers/src" />
       <recent name="$PROJECT_DIR$/wasmi-checkers" />
-      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/wasmi-add/src" />
       <recent name="$PROJECT_DIR$/wasmi-add" />
     </key>
@@ -135,7 +145,8 @@
       <workItem from="1659858249172" duration="78000" />
       <workItem from="1659858510924" duration="55000" />
       <workItem from="1659858591176" duration="10000" />
-      <workItem from="1659859111311" duration="4468000" />
+      <workItem from="1659859111311" duration="6785000" />
+      <workItem from="1660178766234" duration="1513000" />
     </task>
     <servers />
   </component>

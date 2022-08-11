@@ -1,0 +1,12 @@
+[package]
+name = "pihost"
+version = "0.1.0"
+authors = ["your Email <your@email.com>"]
+
+[dependencies]
+notify = "4.0.0"
+wasmi = "0.4.1"
+ctrlc = { version = "3.0", features = ["termination"] }
+
+[target.'cfg(any(target_arch = "arm", target_arch = "armv7"))'.dependencies]
+blinkt = "0.4.0"
