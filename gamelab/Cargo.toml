@@ -6,7 +6,7 @@ version = "0.1.0"
 authors = ["You <you@example.com>"]
 categories = ["wasm"]
 readme = "README.md"
-edition = "2018"
+edition = "2023"
 
 [lib]
 crate-type = ["cdylib"]
