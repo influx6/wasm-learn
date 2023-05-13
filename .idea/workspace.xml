@@ -12,36 +12,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40bdf934-9654-43fc-b32c-45a951ffa21c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/waros/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/waros/botengine/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/waros/botengine/src/events.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/waros/botengine/src/game/damage.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/waros/botengine/src/game/mod.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/waros/botengine/src/game/motion.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/waros/botengine/src/game/projectiles.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/waros/botengine/src/game/scanner.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/waros/botengine/src/lib.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/waros/botengine/src/runtime.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/waros/consolerunner/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/waros/consolerunner/bots/dumbotrs.wasm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/waros/consolerunner/bots/rabbit.wasm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/waros/consolerunner/bots/rook.wasm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/waros/consolerunner/src/main.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/waros/dumbotrs/.cargo/config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/waros/dumbotrs/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/waros/dumbotrs/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/waros/dumbotrs/src/lib.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/waros/rabbit/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/waros/rabbit/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/waros/rabbit/src/lib.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/waros/rook/.cargo/config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/waros/rook/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/waros/rook/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/waros/rook/src/lib.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/waros/warsdk/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/waros/warsdk/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/waros/warsdk/src/ffi.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/waros/warsdk/src/lib.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -166,7 +136,9 @@
       <workItem from="1659858591176" duration="10000" />
       <workItem from="1659859111311" duration="6785000" />
       <workItem from="1660178766234" duration="2950000" />
-      <workItem from="1660458996930" duration="1724000" />
+      <workItem from="1660458996930" duration="3556000" />
+      <workItem from="1665731426976" duration="24000" />
+      <workItem from="1665731870689" duration="22000" />
     </task>
     <servers />
   </component>
