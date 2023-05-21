@@ -1,0 +1,5 @@
+All assets used with permission
+
+background_sound.mp3 is from https://gamesounds.xyz/?dir=OpenBundle/Background%20Music%20and%20Loops
+
+SFX_Jump_23.mp3 from https://opengameart.org/content/8-bit-jump-1 Copyright Jesús Lastra
