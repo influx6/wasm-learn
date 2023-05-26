@@ -8,11 +8,14 @@
       <sourceFolder url="file://$MODULE_DIR$/bindgenhello/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/yewcounter/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/wasmi-checkers/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/gamelab/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/gamelab/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/rustwasmhello/target" />
       <excludeFolder url="file://$MODULE_DIR$/rustycheckers/target" />
       <excludeFolder url="file://$MODULE_DIR$/bindgenhello/target" />
       <excludeFolder url="file://$MODULE_DIR$/yewcounter/target" />
       <excludeFolder url="file://$MODULE_DIR$/wasmi-checkers/target" />
+      <excludeFolder url="file://$MODULE_DIR$/gamelab/target" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
