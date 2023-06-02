@@ -23,10 +23,12 @@ lto = true
 [dependencies]
 # The `wasm-bindgen` crate provides the bare minimum functionality needed
 # to interact with JavaScript.
-wasm-bindgen = "0.2.78"
+wasm-bindgen = { version= "0.2.78"}
 futures = "0.3.18"
 js-sys = "0.3.55"
 wasm-bindgen-futures = "0.4.28"
+serde = { version = "1.0.131", features = ["derive"] }
+ serde-wasm-bindgen = "0.4"
 
 [dependencies.rand]
 version = "0.8.4"

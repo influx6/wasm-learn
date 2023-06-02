@@ -1,85 +1,87 @@
+use std::collections::HashMap;
 use std::rc::Rc;
 use std::sync::Mutex;
+
 use rand::prelude::*;
-use wasm_bindgen::prelude::*;
+use serde::{Deserialize, Serialize};
+use serde::de::DeserializeOwned;
 use wasm_bindgen::JsCast;
+use wasm_bindgen::prelude::*;
 use wasm_bindgen_futures::spawn_local;
 
-fn draw_triangle(
-    context: &web_sys::CanvasRenderingContext2d,
-    points: [(f64, f64); 3],
-    colors: (u8, u8, u8),
-) {
-    let color_str = format!("rgb({}, {}, {})", colors.0, colors.1, colors.2);
-    context.set_fill_style(&wasm_bindgen::JsValue::from_str(&color_str));
-
-    let [top, left, right] = points;
-    context.move_to(top.0, top.1);
-    context.begin_path();
-    context.line_to(left.0, left.1);
-    context.line_to(right.0, right.1);
-    context.line_to(top.0, top.1);
-    context.close_path();
-    context.stroke();
-    context.fill();
+#[derive(Deserialize, Serialize, Debug)]
+struct Rect {
+    x: u16,
+    y: u16,
+    w: u16,
+    h: u16,
 }
 
-fn midpoint(point1: (f64, f64), point2: (f64, f64)) -> (f64, f64) {
-    ((point1.0 + point2.0) / 2.0, (point1.1 + point2.1) / 2.0)
+#[derive(Deserialize, Serialize, Debug)]
+struct Cell {
+    frame: Rect,
 }
 
-fn sierpinski(
-    context: &web_sys::CanvasRenderingContext2d,
-    points: [(f64, f64); 3],
-    colors: (u8, u8, u8),
-    depth: u8,
-) {
-    draw_triangle(&context, points, colors);
-    let depth = depth - 1;
-
-    let [top, left, right] = points;
-    if depth > 0 {
-        let mut rng = thread_rng();
-        let next_colors = (
-            rng.gen_range(0..255),
-            rng.gen_range(0..255),
-            rng.gen_range(0..255),
-        );
-        let left_middle = midpoint(top, left);
-        let right_middle = midpoint(top, right);
-        let bottom_middle = midpoint(left, right);
-        sierpinski(
-            &context,
-            [top, left_middle, right_middle],
-            next_colors,
-            depth,
-        );
-        sierpinski(
-            &context,
-            [left_middle, left, bottom_middle],
-            next_colors,
-            depth,
-        );
-        sierpinski(
-            &context,
-            [right_middle, bottom_middle, right],
-            next_colors,
-            depth,
-        );
-    }
+#[derive(Deserialize, Serialize, Debug)]
+struct Sheet {
+    frames: HashMap<String, Cell>,
 }
 
-fn load_image(resource_uri: &str) -> web_sys::HtmlImageElement {
+fn _load_image(resource_uri: &str) -> web_sys::HtmlImageElement {
     let image = web_sys::HtmlImageElement::new().unwrap();
     image.set_src(resource_uri);
     image
 }
 
-async fn fetch_json(json_path: &str) -> Result<JsValue, JsValue> {
+async fn do_load_image(resource_uri: &str) -> Result<web_sys::HtmlImageElement, JsValue> {
+    let (sender, receiver) = futures::channel::oneshot::channel::<Result<(), JsValue>>();
+    let sender = Rc::new(Mutex::new(Some(sender)));
+    let send_error_counter = Rc::clone(&sender);
+
+    let dom_player_image = _load_image(resource_uri);
+    let on_load_closure = Closure::once(move || {
+        if let Some(sender) = sender.lock().ok().and_then(|mut rx| rx.take())
+        {
+            sender.send(Ok(()));
+        }
+    });
+
+    let on_error_closure = Closure::once(move |err| {
+        if let Some(send_error_counter) = send_error_counter.lock().ok().and_then(|mut opt| opt.take()) {
+            send_error_counter.send(Err(err));
+        }
+    });
+
+    dom_player_image.set_onload(Some(on_load_closure.as_ref().unchecked_ref()));
+    dom_player_image.set_onerror(Some(on_error_closure.as_ref().unchecked_ref()));
+
+    on_load_closure.forget();
+    on_error_closure.forget();
+
+    match receiver.await {
+        Ok(_) => {
+            Ok(dom_player_image)
+        }
+        Err(err) => {
+            return Err(JsValue::from_str(format!("Failed to load image: {} due to: {}", resource_uri, err).as_str()));
+        }
+    }
+}
+
+async fn fetch_json<T: DeserializeOwned>(json_path: &str) -> Result<T, JsValue> {
     let window = web_sys::window().unwrap();
     let resp_value = wasm_bindgen_futures::JsFuture::from(window.fetch_with_str(json_path)).await?;
     let resp: web_sys::Response = resp_value.dyn_into()?;
-    wasm_bindgen_futures::JsFuture::from(resp.json()?).await
+
+    match wasm_bindgen_futures::JsFuture::from(resp.json()?).await {
+        Ok(json_object_js_obj) => {
+            Ok(serde_wasm_bindgen::from_value::<T>(json_object_js_obj)
+                .expect("Expected json object converted correctly from JsValue"))
+        }
+        Err(err) => {
+            Err(err)
+        }
+    }
 }
 
 // This is like the `main` function, except for JavaScript.
@@ -114,42 +116,22 @@ pub fn main_js() -> Result<(), JsValue> {
         .unwrap();
 
     spawn_local(async move {
-        let (sender, receiver) = futures::channel::oneshot::channel::<Result<(), JsValue>>();
-        let sender = Rc::new(Mutex::new(Some(sender)));
-        let send_error_counter = Rc::clone(&sender);
+        let player_sprite_sheet = fetch_json::<Sheet>("/assets/sprite_sheets/rhb.json").await.expect("Could not fetch rhb.json");
+        let player_sheet_image = do_load_image("/assets/sprite_sheets/rhb.png").await.expect("Could not load rhb.png image for player sheet");
 
-        let dom_player_image = load_image("/assets/resized/rhb/Idle (1).png");
-        let on_load_closure = Closure::once(move || {
-            if let Some(sender) = sender.lock().ok().and_then(|mut rx| rx.take())
-            {
-                sender.send(Ok(()));
-            }
-        });
 
-        let on_error_closure = Closure::once(move |err| {
-            if let Some(send_error_counter) = send_error_counter.lock().ok().and_then(|mut opt| opt.take()) {
-                send_error_counter.send(Err(err));
-            }
-        });
-
-        dom_player_image.set_onload(Some(on_load_closure.as_ref().unchecked_ref()));
-        dom_player_image.set_onerror(Some(on_error_closure.as_ref().unchecked_ref()));
-
-        on_load_closure.forget();
-        on_error_closure.forget();
-
-        receiver.await.unwrap();
-
+        let sprite = player_sprite_sheet.frames.get("Run (1).png").expect("Cell not found");
         context
-            .draw_image_with_html_image_element(&dom_player_image, 0.0, 0.0)
-            .unwrap();
-
-        sierpinski(
-            &context,
-            [(300.0, 0.0), (0.0, 600.0), (600.0, 600.0)],
-            (0, 255, 0),
-            5,
-        );
+            .draw_image_with_html_image_element_and_sw_and_sh_and_dx_and_dy_and_dw_and_dh(&player_sheet_image,
+                                                                                          sprite.frame.x.into(),
+                                                                                          sprite.frame.y.into(),
+                                                                                          sprite.frame.w.into(),
+                                                                                          sprite.frame.h.into(),
+                                                                                          300.0,
+                                                                                          300.0,
+                                                                                          sprite.frame.w.into(),
+                                                                                          sprite.frame.h.into(),
+            ).unwrap();
     });
 
     Ok(())
