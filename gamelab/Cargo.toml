@@ -28,7 +28,10 @@ futures = "0.3.18"
 js-sys = "0.3.55"
 wasm-bindgen-futures = "0.4.28"
 serde = { version = "1.0.131", features = ["derive"] }
- serde-wasm-bindgen = "0.4"
+serde-wasm-bindgen = "0.4"
+
+[dependencies.anyhow]
+version = "1.0.51"
 
 [dependencies.rand]
 version = "0.8.4"

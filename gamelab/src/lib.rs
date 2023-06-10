@@ -3,11 +3,15 @@ use std::rc::Rc;
 use std::sync::Mutex;
 
 use rand::prelude::*;
-use serde::{Deserialize, Serialize};
 use serde::de::DeserializeOwned;
-use wasm_bindgen::JsCast;
+use serde::{Deserialize, Serialize};
 use wasm_bindgen::prelude::*;
+use wasm_bindgen::JsCast;
 use wasm_bindgen_futures::spawn_local;
+
+#[macro_use]
+mod browser;
+mod engine;
 
 #[derive(Deserialize, Serialize, Debug)]
 struct Rect {
@@ -40,14 +44,17 @@ async fn do_load_image(resource_uri: &str) -> Result<web_sys::HtmlImageElement, 
 
     let dom_player_image = _load_image(resource_uri);
     let on_load_closure = Closure::once(move || {
-        if let Some(sender) = sender.lock().ok().and_then(|mut rx| rx.take())
-        {
+        if let Some(sender) = sender.lock().ok().and_then(|mut rx| rx.take()) {
             sender.send(Ok(()));
         }
     });
 
     let on_error_closure = Closure::once(move |err| {
-        if let Some(send_error_counter) = send_error_counter.lock().ok().and_then(|mut opt| opt.take()) {
+        if let Some(send_error_counter) = send_error_counter
+            .lock()
+            .ok()
+            .and_then(|mut opt| opt.take())
+        {
             send_error_counter.send(Err(err));
         }
     });
@@ -59,11 +66,11 @@ async fn do_load_image(resource_uri: &str) -> Result<web_sys::HtmlImageElement, 
     on_error_closure.forget();
 
     match receiver.await {
-        Ok(_) => {
-            Ok(dom_player_image)
-        }
+        Ok(_) => Ok(dom_player_image),
         Err(err) => {
-            return Err(JsValue::from_str(format!("Failed to load image: {} due to: {}", resource_uri, err).as_str()));
+            return Err(JsValue::from_str(
+                format!("Failed to load image: {} due to: {}", resource_uri, err).as_str(),
+            ));
         }
     }
 }
@@ -74,13 +81,9 @@ async fn fetch_json<T: DeserializeOwned>(json_path: &str) -> Result<T, JsValue> 
     let resp: web_sys::Response = resp_value.dyn_into()?;
 
     match wasm_bindgen_futures::JsFuture::from(resp.json()?).await {
-        Ok(json_object_js_obj) => {
-            Ok(serde_wasm_bindgen::from_value::<T>(json_object_js_obj)
-                .expect("Expected json object converted correctly from JsValue"))
-        }
-        Err(err) => {
-            Err(err)
-        }
+        Ok(json_object_js_obj) => Ok(serde_wasm_bindgen::from_value::<T>(json_object_js_obj)
+            .expect("Expected json object converted correctly from JsValue")),
+        Err(err) => Err(err),
     }
 }
 
@@ -92,9 +95,7 @@ pub fn main_js() -> Result<(), JsValue> {
     // #[cfg(debug_assertions)]
     console_error_panic_hook::set_once();
 
-    // Your code goes here!
-    let window = web_sys::window().unwrap();
-    let document = window.document().unwrap();
+    let document = browser::document().expect("browser.Document should be found");
     let _body = document
         .query_selector("body")
         .unwrap()
@@ -116,22 +117,49 @@ pub fn main_js() -> Result<(), JsValue> {
         .unwrap();
 
     spawn_local(async move {
-        let player_sprite_sheet = fetch_json::<Sheet>("/assets/sprite_sheets/rhb.json").await.expect("Could not fetch rhb.json");
-        let player_sheet_image = do_load_image("/assets/sprite_sheets/rhb.png").await.expect("Could not load rhb.png image for player sheet");
+        let player_sprite_sheet = fetch_json::<Sheet>("/assets/sprite_sheets/rhb.json")
+            .await
+            .expect("Could not fetch rhb.json");
+        let player_sheet_image = do_load_image("/assets/sprite_sheets/rhb.png")
+            .await
+            .expect("Could not load rhb.png image for player sheet");
 
+        let mut frame = -1;
+        let interval_callback = Closure::wrap(Box::new(move || {
+            frame = (frame + 1) % 8;
+            let frame_name = format!("Run ({}).png", frame + 1);
 
-        let sprite = player_sprite_sheet.frames.get("Run (1).png").expect("Cell not found");
-        context
-            .draw_image_with_html_image_element_and_sw_and_sh_and_dx_and_dy_and_dw_and_dh(&player_sheet_image,
-                                                                                          sprite.frame.x.into(),
-                                                                                          sprite.frame.y.into(),
-                                                                                          sprite.frame.w.into(),
-                                                                                          sprite.frame.h.into(),
-                                                                                          300.0,
-                                                                                          300.0,
-                                                                                          sprite.frame.w.into(),
-                                                                                          sprite.frame.h.into(),
-            ).unwrap();
+            // draw next frame of player sprite
+            context.clear_rect(0.0, 0.0, 600.0, 600.0);
+
+            let sprite = player_sprite_sheet
+                .frames
+                .get(&frame_name)
+                .expect("Cell not found");
+            context
+                .draw_image_with_html_image_element_and_sw_and_sh_and_dx_and_dy_and_dw_and_dh(
+                    &player_sheet_image,
+                    sprite.frame.x.into(),
+                    sprite.frame.y.into(),
+                    sprite.frame.w.into(),
+                    sprite.frame.h.into(),
+                    300.0,
+                    300.0,
+                    sprite.frame.w.into(),
+                    sprite.frame.h.into(),
+                )
+                .unwrap();
+        }) as Box<dyn FnMut()>);
+
+        browser::window()
+            .unwrap()
+            .set_interval_with_callback_and_timeout_and_arguments_0(
+                interval_callback.as_ref().unchecked_ref(),
+                50,
+            )
+            .unwrap();
+
+        interval_callback.forget();
     });
 
     Ok(())
