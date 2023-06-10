@@ -31,62 +31,6 @@ struct Sheet {
     frames: HashMap<String, Cell>,
 }
 
-fn _load_image(resource_uri: &str) -> web_sys::HtmlImageElement {
-    let image = web_sys::HtmlImageElement::new().unwrap();
-    image.set_src(resource_uri);
-    image
-}
-
-async fn do_load_image(resource_uri: &str) -> Result<web_sys::HtmlImageElement, JsValue> {
-    let (sender, receiver) = futures::channel::oneshot::channel::<Result<(), JsValue>>();
-    let sender = Rc::new(Mutex::new(Some(sender)));
-    let send_error_counter = Rc::clone(&sender);
-
-    let dom_player_image = _load_image(resource_uri);
-    let on_load_closure = Closure::once(move || {
-        if let Some(sender) = sender.lock().ok().and_then(|mut rx| rx.take()) {
-            sender.send(Ok(()));
-        }
-    });
-
-    let on_error_closure = Closure::once(move |err| {
-        if let Some(send_error_counter) = send_error_counter
-            .lock()
-            .ok()
-            .and_then(|mut opt| opt.take())
-        {
-            send_error_counter.send(Err(err));
-        }
-    });
-
-    dom_player_image.set_onload(Some(on_load_closure.as_ref().unchecked_ref()));
-    dom_player_image.set_onerror(Some(on_error_closure.as_ref().unchecked_ref()));
-
-    on_load_closure.forget();
-    on_error_closure.forget();
-
-    match receiver.await {
-        Ok(_) => Ok(dom_player_image),
-        Err(err) => {
-            return Err(JsValue::from_str(
-                format!("Failed to load image: {} due to: {}", resource_uri, err).as_str(),
-            ));
-        }
-    }
-}
-
-async fn fetch_json<T: DeserializeOwned>(json_path: &str) -> Result<T, JsValue> {
-    let window = web_sys::window().unwrap();
-    let resp_value = wasm_bindgen_futures::JsFuture::from(window.fetch_with_str(json_path)).await?;
-    let resp: web_sys::Response = resp_value.dyn_into()?;
-
-    match wasm_bindgen_futures::JsFuture::from(resp.json()?).await {
-        Ok(json_object_js_obj) => Ok(serde_wasm_bindgen::from_value::<T>(json_object_js_obj)
-            .expect("Expected json object converted correctly from JsValue")),
-        Err(err) => Err(err),
-    }
-}
-
 // This is like the `main` function, except for JavaScript.
 #[wasm_bindgen(start)]
 pub fn main_js() -> Result<(), JsValue> {
@@ -95,32 +39,14 @@ pub fn main_js() -> Result<(), JsValue> {
     // #[cfg(debug_assertions)]
     console_error_panic_hook::set_once();
 
-    let document = browser::document().expect("browser.Document should be found");
-    let _body = document
-        .query_selector("body")
-        .unwrap()
-        .unwrap()
-        .dyn_into::<web_sys::HtmlBodyElement>()
-        .unwrap();
+    let context = browser::canvas_context().expect("Canvas.context should be found");
 
-    let canvas = document
-        .get_element_by_id("canvas")
-        .unwrap()
-        .dyn_into::<web_sys::HtmlCanvasElement>()
-        .unwrap();
-
-    let context = canvas
-        .get_context("2d")
-        .unwrap()
-        .unwrap()
-        .dyn_into::<web_sys::CanvasRenderingContext2d>()
-        .unwrap();
-
-    spawn_local(async move {
-        let player_sprite_sheet = fetch_json::<Sheet>("/assets/sprite_sheets/rhb.json")
+    browser::spawn_local_thread(async move {
+        let player_sprite_sheet = browser::fetch_json_as::<Sheet>("/assets/sprite_sheets/rhb.json")
             .await
             .expect("Could not fetch rhb.json");
-        let player_sheet_image = do_load_image("/assets/sprite_sheets/rhb.png")
+
+        let player_sheet_image = browser::do_load_image("/assets/sprite_sheets/rhb.png")
             .await
             .expect("Could not load rhb.png image for player sheet");
 
