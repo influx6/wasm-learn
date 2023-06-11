@@ -13,13 +13,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40bdf934-9654-43fc-b32c-45a951ffa21c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/gamelab/src/browser.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gamelab/src/engine.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gamelab/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gamelab/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gamelab/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/gamelab/src/lib.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rustwasmhello/target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/rustwasmhello/target/.rustc_info.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamelab/src/browser.rs" beforeDir="false" afterPath="$PROJECT_DIR$/gamelab/src/browser.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,6 +164,7 @@
       <workItem from="1686379844358" duration="26000" />
       <workItem from="1686379885665" duration="271000" />
       <workItem from="1686380172649" duration="141000" />
+      <workItem from="1686468210833" duration="617000" />
     </task>
     <servers />
   </component>
