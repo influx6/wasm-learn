@@ -1,13 +1,8 @@
 use std::collections::HashMap;
 
-
-
-
-
 use serde::{Deserialize, Serialize};
 use wasm_bindgen::prelude::*;
 use wasm_bindgen::JsCast;
-
 
 #[macro_use]
 mod browser;
