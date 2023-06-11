@@ -46,7 +46,7 @@ pub fn main_js() -> Result<(), JsValue> {
             .await
             .expect("Could not fetch rhb.json");
 
-        let player_sheet_image = browser::do_load_image("/assets/sprite_sheets/rhb.png")
+        let player_sheet_image = engine::do_load_image("/assets/sprite_sheets/rhb.png")
             .await
             .expect("Could not load rhb.png image for player sheet");
 
