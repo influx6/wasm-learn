@@ -6,8 +6,6 @@ use anyhow::{anyhow, Result};
 use wasm_bindgen::prelude::*;
 use wasm_bindgen::JsCast;
 
-use rand::prelude::*;
-
 use crate::browser;
 
 pub async fn do_load_image(resource_uri: &str) -> Result<web_sys::HtmlImageElement> {
