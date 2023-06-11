@@ -1,22 +1,17 @@
-use std::collections::HashMap;
-use std::rc::Rc;
-use std::sync::Mutex;
-
 use anyhow::{anyhow, Result};
 use serde::de::DeserializeOwned;
-use std::error::Error;
+
 use std::future::Future;
 use wasm_bindgen::closure::WasmClosureFnOnce;
 use wasm_bindgen::prelude::*;
 use wasm_bindgen::JsCast;
-use web_sys::console;
 
 use rand::prelude::*;
 use web_sys::{CanvasRenderingContext2d, Document, HtmlCanvasElement, Response, Window};
 
 macro_rules! log {
     ( $($t:tt)* ) => {
-        web_sys::console::log_1(&format!( $($t)*).into());
+        web_sys::console::log_1(&format!( $($t)*).into())
     }
 }
 

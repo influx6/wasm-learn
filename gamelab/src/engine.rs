@@ -1,17 +1,12 @@
-use std::collections::HashMap;
 use std::rc::Rc;
 use std::sync::Mutex;
 
 use anyhow::{anyhow, Result};
-use std::error::Error;
-use std::future::Future;
-use wasm_bindgen::closure::WasmClosureFnOnce;
+
 use wasm_bindgen::prelude::*;
 use wasm_bindgen::JsCast;
-use web_sys::console;
 
 use rand::prelude::*;
-use web_sys::{CanvasRenderingContext2d, Document, HtmlCanvasElement, Response, Window};
 
 use crate::browser;
 
@@ -26,7 +21,12 @@ pub async fn do_load_image(resource_uri: &str) -> Result<web_sys::HtmlImageEleme
 
     let on_load_closure = browser::closure_once(move || {
         if let Some(sender) = sender.lock().ok().and_then(|mut rx| rx.take()) {
-            sender.send(Ok(()));
+            match sender.send(Ok(())) {
+                Ok(_) => {}
+                Err(err) => {
+                    log!("fail to load send success callback: {:#?}", err)
+                }
+            }
         }
     });
 
@@ -36,10 +36,15 @@ pub async fn do_load_image(resource_uri: &str) -> Result<web_sys::HtmlImageEleme
             .ok()
             .and_then(|mut opt| opt.take())
         {
-            send_error_counter.send(Err(anyhow!(
+            match send_error_counter.send(Err(anyhow!(
                 "Failed to deliver error to Oneshot::channel: {:#?}",
                 err
-            )));
+            ))) {
+                Ok(_) => {}
+                Err(err) => {
+                    log!("fail to load image: {:#?}", err)
+                }
+            }
         }
     });
 
