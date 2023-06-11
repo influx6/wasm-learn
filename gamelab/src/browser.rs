@@ -6,7 +6,6 @@ use wasm_bindgen::closure::WasmClosureFnOnce;
 use wasm_bindgen::prelude::*;
 use wasm_bindgen::JsCast;
 
-use rand::prelude::*;
 use web_sys::{CanvasRenderingContext2d, Document, HtmlCanvasElement, Response, Window};
 
 macro_rules! log {
