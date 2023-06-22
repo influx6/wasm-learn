@@ -36,6 +36,9 @@ version = "1.0.51"
 [dependencies.rand]
 version = "0.8.4"
 
+[dependencies.async-trait]
+version = "0.1.52"
+
 [dependencies.getrandom]
 version="0.2.3"
 features = ["js"]
@@ -53,6 +56,7 @@ features = [
     "console", "Window", "Document", "HtmlBodyElement",
     "HtmlImageElement", "HtmlCanvasElement",
     "CanvasRenderingContext2d", "Element", "Response",
+    "Performance",
     ]
 
 # The `console_error_panic_hook` crate provides better debugging of panics by

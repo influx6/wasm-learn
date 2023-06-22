@@ -2,6 +2,7 @@ use anyhow::{anyhow, Result};
 use serde::de::DeserializeOwned;
 
 use std::future::Future;
+use wasm_bindgen::closure::WasmClosure;
 use wasm_bindgen::closure::WasmClosureFnOnce;
 use wasm_bindgen::prelude::*;
 use wasm_bindgen::JsCast;
@@ -99,4 +100,27 @@ where
     F: 'static + WasmClosureFnOnce<A, R>,
 {
     Closure::once(fn_once)
+}
+
+pub type LoopClosure = Closure<dyn FnMut(f64)>;
+
+pub fn request_animation_frame(callback: &LoopClosure) -> Result<i32> {
+    window()?
+        .request_animation_frame(callback.as_ref().unchecked_ref())
+        .map_err(|err| anyhow!("Cannot request animation frame {:#?}", err))
+}
+
+pub fn closure_wrap<T: WasmClosure + ?Sized>(data: Box<T>) -> Closure<T> {
+    Closure::wrap(data)
+}
+
+pub fn create_raf_closure(f: impl FnMut(f64) + 'static) -> LoopClosure {
+    closure_wrap(Box::new(f))
+}
+
+pub fn now() -> Result<f64> {
+    Ok(window()?
+        .performance()
+        .ok_or_else(|| anyhow!("window.Performance object not found"))?
+        .now())
 }
