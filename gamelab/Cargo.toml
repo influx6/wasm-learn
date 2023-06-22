@@ -56,7 +56,7 @@ features = [
     "console", "Window", "Document", "HtmlBodyElement",
     "HtmlImageElement", "HtmlCanvasElement",
     "CanvasRenderingContext2d", "Element", "Response",
-    "Performance",
+    "Performance", "KeyboardEvent",
     ]
 
 # The `console_error_panic_hook` crate provides better debugging of panics by

@@ -28,6 +28,7 @@ struct Sheet {
 
 pub struct WalkTheDog {
     image: Option<HtmlImageElement>,
+    position: engine::Point,
     sheet: Option<Sheet>,
     frame: u8,
 }
@@ -38,6 +39,7 @@ impl WalkTheDog {
             image: None,
             sheet: None,
             frame: 0,
+            position: engine::Point { x: 0, y: 0 },
         }
     }
 }
@@ -53,11 +55,29 @@ impl engine::Game for WalkTheDog {
         Ok(Box::new(WalkTheDog {
             sheet: Some(player_sprite_sheet),
             image: Some(player_sheet_image),
-            frame: 0,
+            position: self.position,
+            frame: self.frame,
         }))
     }
 
-    fn update(&mut self) {
+    fn update(&mut self, keystate: &engine::KeyState) {
+        let mut velocity = engine::Point { x: 0, y: 0 };
+        if keystate.is_pressed("ArrowDown") {
+            velocity.y += 3;
+        }
+        if keystate.is_pressed("ArrowUp") {
+            velocity.y -= 3;
+        }
+        if keystate.is_pressed("ArrowRight") {
+            velocity.x += 3;
+        }
+        if keystate.is_pressed("ArrowLeft") {
+            velocity.x -= 3;
+        }
+
+        self.position.x += velocity.x;
+        self.position.y += velocity.y;
+
         if self.frame < 23 {
             self.frame += 1;
         } else {
@@ -79,8 +99,8 @@ impl engine::Game for WalkTheDog {
         renderer.clear(&engine::Rect {
             x: 0.0,
             y: 0.0,
-            width: 600.0,
-            height: 600.0,
+            width: 1200.0,
+            height: 1200.0,
         });
 
         let size = engine::Rect {
@@ -91,8 +111,8 @@ impl engine::Game for WalkTheDog {
         };
 
         let location = engine::Rect {
-            x: 300.0,
-            y: 300.0,
+            x: self.position.x.into(),
+            y: self.position.y.into(),
             width: sprite.frame.w.into(),
             height: sprite.frame.h.into(),
         };
