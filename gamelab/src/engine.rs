@@ -12,17 +12,7 @@ use wasm_bindgen::JsCast;
 use web_sys::{CanvasRenderingContext2d, HtmlImageElement};
 
 use crate::browser;
-
-enum KeyPress {
-    KeyUp(web_sys::KeyboardEvent),
-    KeyDown(web_sys::KeyboardEvent),
-}
-
-#[derive(Clone, Copy)]
-pub struct Point {
-    pub x: i16,
-    pub y: i16,
-}
+use crate::models::{KeyPress, Rect};
 
 pub struct KeyState {
     pressed_keys: HashMap<String, web_sys::KeyboardEvent>,
@@ -46,14 +36,6 @@ impl KeyState {
     fn set_released(&mut self, code: &str) {
         self.pressed_keys.remove(code.into());
     }
-}
-
-#[derive(Deserialize, Serialize, Debug)]
-pub struct Rect {
-    pub x: f32,
-    pub y: f32,
-    pub width: f32,
-    pub height: f32,
 }
 
 pub struct Renderer {

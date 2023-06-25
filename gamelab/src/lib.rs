@@ -2,8 +2,10 @@ use wasm_bindgen::prelude::*;
 
 #[macro_use]
 mod browser;
+mod avatar;
 mod engine;
 mod game;
+mod models;
 
 // This is like the `main` function, except for JavaScript.
 #[wasm_bindgen(start)]
