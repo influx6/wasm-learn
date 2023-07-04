@@ -12,7 +12,7 @@ use wasm_bindgen::JsCast;
 use web_sys::{CanvasRenderingContext2d, HtmlImageElement};
 
 use crate::browser;
-use crate::models::{KeyPress, Rect};
+use crate::models::{KeyPress, Point, Rect};
 
 pub struct KeyState {
     pressed_keys: HashMap<String, web_sys::KeyboardEvent>,
@@ -50,6 +50,12 @@ impl Renderer {
             rect.width.into(),
             rect.height.into(),
         )
+    }
+
+    pub fn draw_entire_image(&self, image: &HtmlImageElement, position: &Point) {
+        self.context
+            .draw_image_with_html_image_element(image, position.x.into(), position.y.into())
+            .expect("Drawiong is throwing exceptions! Unrecoverable error.");
     }
 
     pub fn draw_image(&self, image: &HtmlImageElement, frame: &Rect, destination: &Rect) {
@@ -214,4 +220,35 @@ pub async fn run_loop(game: impl Game + 'static) -> Result<()> {
             .ok_or_else(|| anyhow!("GameLoop: loop is None"))?,
     )?;
     Ok(())
+}
+
+pub struct Image {
+    element: HtmlImageElement,
+    bounding_box: Rect,
+    position: Point,
+}
+
+impl Image {
+    pub fn new(element: HtmlImageElement, position: Point) -> Self {
+        let bounding_box = Rect {
+            x: position.x.into(),
+            y: position.x.into(),
+            width: element.width() as f32,
+            height: element.height() as f32,
+        };
+
+        Image {
+            element,
+            bounding_box,
+            position,
+        }
+    }
+
+    pub fn bounding_box(&self) -> &Rect {
+        &self.bounding_box
+    }
+
+    pub fn draw(&self, renderer: &Renderer) {
+        renderer.draw_entire_image(&self.element, &self.position);
+    }
 }

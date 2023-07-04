@@ -17,8 +17,10 @@ pub struct SheetRect {
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
+#[serde(rename_all = "camelCase")]
 pub struct Cell {
     pub frame: SheetRect,
+    pub sprite_source_size: SheetRect,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
@@ -35,6 +37,12 @@ pub enum KeyPress {
 pub struct Point {
     pub x: i16,
     pub y: i16,
+}
+
+impl Point {
+    pub fn new(x: i16, y: i16) -> Self {
+        Point { x, y }
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug)]

@@ -10,9 +10,15 @@ use crate::browser;
 use crate::engine;
 use crate::models;
 
+pub struct Walk {
+    boy: avatar::RedHatBoy,
+    stone: engine::Image,
+    background: engine::Image,
+}
+
 pub enum WalkTheDog {
     Loading,
-    Loaded(avatar::RedHatBoy),
+    Loaded(Walk),
 }
 
 impl WalkTheDog {
@@ -26,39 +32,51 @@ impl engine::Game for WalkTheDog {
     async fn initialize(&self) -> Result<Box<dyn engine::Game>> {
         match self {
             WalkTheDog::Loading => {
-                let player_sprite_sheet =
-                    browser::fetch_json_as::<models::Sheet>("/assets/sprite_sheets/rhb.json")
-                        .await?;
+                let player_sprite_sheet = browser::fetch_json_as::<models::Sheet>(
+                    "/assets/sprite_sheets/rhb_trimmed.json",
+                )
+                .await?;
 
                 let player_sheet_image =
-                    engine::do_load_image("/assets/sprite_sheets/rhb.png").await?;
+                    engine::do_load_image("/assets/sprite_sheets/rhb_trimmed.png").await?;
+
+                let game_background =
+                    engine::do_load_image("assets/original/freetileset/png/BG/BG.png").await?;
+
+                let game_stone =
+                    engine::do_load_image("assets/original/freetileset/png/Object/Stone.png")
+                        .await?;
 
                 let rhb = avatar::RedHatBoy::new(player_sprite_sheet, player_sheet_image);
 
-                Ok(Box::new(WalkTheDog::Loaded(rhb)))
+                Ok(Box::new(WalkTheDog::Loaded(Walk {
+                    boy: rhb,
+                    stone: engine::Image::new(game_stone, models::Point::new(150, 546)),
+                    background: engine::Image::new(game_background, models::Point::new(0, 0)),
+                })))
             }
             WalkTheDog::Loaded(_) => Err(anyhow!("Game is already initialized!")),
         }
     }
 
     fn update(&mut self, keystate: &engine::KeyState) {
-        if let WalkTheDog::Loaded(rhb) = self {
+        if let WalkTheDog::Loaded(walk) = self {
             if keystate.is_pressed("Space") {
-                rhb.jump();
+                walk.boy.jump();
             }
             if keystate.is_pressed("ArrowDown") {
-                rhb.slide();
+                walk.boy.slide();
             }
             if keystate.is_pressed("ArrowUp") {
-                rhb.run_up();
+                walk.boy.run_up();
             }
             if keystate.is_pressed("ArrowRight") {
-                rhb.run_right();
+                walk.boy.run_right();
             }
             if keystate.is_pressed("ArrowLeft") {
-                rhb.run_left();
+                walk.boy.run_left();
             }
-            rhb.update();
+            walk.boy.update();
         }
     }
 
@@ -70,8 +88,10 @@ impl engine::Game for WalkTheDog {
             height: 1200.0,
         });
 
-        if let WalkTheDog::Loaded(rhb) = self {
-            rhb.draw(renderer);
+        if let WalkTheDog::Loaded(walk) = self {
+            walk.background.draw(renderer);
+            walk.stone.draw(renderer);
+            walk.boy.draw(renderer);
         }
     }
 }

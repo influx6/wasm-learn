@@ -8,7 +8,8 @@ use crate::models;
 mod red_hat_boy_states {
     use crate::models::Point;
 
-    pub const FLOOR: i16 = 475;
+    pub const FLOOR: i16 = 479;
+    pub const STARTING_POINT: i16 = -20;
 
     const GRAVITY: i16 = 1;
     const JUMP_SPEED: i16 = -25;
@@ -200,7 +201,10 @@ mod red_hat_boy_states {
                 _state: Idle {},
                 context: RedHatBoyContext {
                     frame: 0,
-                    position: Point { x: 0, y: FLOOR },
+                    position: Point {
+                        x: STARTING_POINT,
+                        y: FLOOR,
+                    },
                     velocity: Point { x: 0, y: 0 },
                 },
             }
@@ -360,19 +364,33 @@ impl RedHatBoy {
         self.state_machine = self.state_machine.transition(Event::RunLeft);
     }
 
-    pub fn draw(&self, renderer: &engine::Renderer) {
-        let current_sprite = (self.state_machine.context().frame / 3) + 1;
-        let frame_name = format!(
+    fn frame_name(&self) -> String {
+        format!(
             "{} ({}).png",
             self.state_machine.frame_name(),
-            current_sprite
-        );
+            (self.state_machine.context().frame / 3) + 1,
+        )
+    }
 
-        let sprite = self
-            .sprite_sheet
-            .frames
-            .get(&frame_name)
-            .expect("Cell not found");
+    fn current_sprite(&self) -> Option<&models::Cell> {
+        self.sprite_sheet.frames.get(&self.frame_name())
+    }
+
+    fn bounding_box(&self) -> models::Rect {
+        let sprite = self.current_sprite().expect("Cell not found");
+
+        models::Rect {
+            x: (self.state_machine.context().position.x + sprite.sprite_source_size.x as i16)
+                .into(),
+            y: (self.state_machine.context().position.y + sprite.sprite_source_size.y as i16)
+                .into(),
+            width: sprite.frame.w.into(),
+            height: sprite.frame.h.into(),
+        }
+    }
+
+    pub fn draw(&self, renderer: &engine::Renderer) {
+        let sprite = self.current_sprite().expect("Cell not found");
 
         renderer.draw_image(
             &self.image,
@@ -383,8 +401,10 @@ impl RedHatBoy {
                 height: sprite.frame.h.into(),
             },
             &models::Rect {
-                x: self.state_machine.context().position.x.into(),
-                y: self.state_machine.context().position.y.into(),
+                x: (self.state_machine.context().position.x + sprite.sprite_source_size.x as i16)
+                    .into(),
+                y: (self.state_machine.context().position.y + sprite.sprite_source_size.y as i16)
+                    .into(),
                 width: sprite.frame.w.into(),
                 height: sprite.frame.h.into(),
             },
