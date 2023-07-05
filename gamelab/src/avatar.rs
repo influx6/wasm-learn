@@ -55,6 +55,11 @@ mod red_hat_boy_states {
             self
         }
 
+        fn stop(mut self) -> Self {
+            self.velocity.x = 0;
+            self
+        }
+
         fn reset_frame(mut self) -> Self {
             self.frame = 0;
             self
@@ -106,6 +111,13 @@ mod red_hat_boy_states {
             self
         }
 
+        pub fn knockout(self) -> RedHatBoyState<Knockout> {
+            RedHatBoyState {
+                context: self.context.reset_frame().stop(),
+                _state: Knockout {},
+            }
+        }
+
         pub fn slide(self) -> RedHatBoyState<Sliding> {
             RedHatBoyState {
                 context: self.context.reset_frame(),
@@ -133,6 +145,13 @@ mod red_hat_boy_states {
     impl RedHatBoyState<Jumping> {
         pub fn frame_name(&self) -> &str {
             JUMP_FRAME_NAME
+        }
+
+        pub fn knockout(self) -> RedHatBoyState<Knockout> {
+            RedHatBoyState {
+                context: self.context.reset_frame().stop(),
+                _state: Knockout {},
+            }
         }
 
         pub fn update(mut self) -> JumpingEndState {
@@ -166,6 +185,13 @@ mod red_hat_boy_states {
             SLIDING_FRAME_NAME
         }
 
+        pub fn knockout(self) -> RedHatBoyState<Knockout> {
+            RedHatBoyState {
+                context: self.context.reset_frame().stop(),
+                _state: Knockout {},
+            }
+        }
+
         pub fn update(mut self) -> SlidingEndState {
             self.context = self.context.update(SLIDING_FRAMES);
             if self.context.frame >= SLIDING_FRAMES {
@@ -179,6 +205,31 @@ mod red_hat_boy_states {
             RedHatBoyState {
                 context: self.context.reset_frame(),
                 _state: Running {},
+            }
+        }
+    }
+
+    const KNOCK_OUT_FRAME_NAME: &str = "Dead";
+    const KNOCK_FRAMES: u8 = 29; // 10 'Dead' frames in sheet: 10 * 3 - 1
+
+    #[derive(Clone, Copy, Debug)]
+    pub struct Knockout;
+
+    impl RedHatBoyState<Knockout> {
+        pub fn frame_name(&self) -> &str {
+            KNOCK_OUT_FRAME_NAME
+        }
+
+        pub fn update(mut self) -> Self {
+            // SlidingEndState::Idle(self)
+            self.context = self.context.stop();
+            self
+        }
+
+        pub fn stand(self) -> RedHatBoyState<Idle> {
+            RedHatBoyState {
+                context: self.context.reset_frame(),
+                _state: Idle {},
             }
         }
     }
@@ -223,6 +274,7 @@ mod red_hat_boy_states {
 enum RedHatBoyStateMachine {
     Idle(RedHatBoyState<Idle>),
     Sliding(RedHatBoyState<Sliding>),
+    Knockout(RedHatBoyState<Knockout>),
     Jumping(RedHatBoyState<Jumping>),
     Running(RedHatBoyState<Running>),
 }
@@ -263,6 +315,12 @@ impl From<RedHatBoyState<Sliding>> for RedHatBoyStateMachine {
     }
 }
 
+impl From<RedHatBoyState<Knockout>> for RedHatBoyStateMachine {
+    fn from(state: RedHatBoyState<Knockout>) -> Self {
+        RedHatBoyStateMachine::Knockout(state)
+    }
+}
+
 impl From<RedHatBoyState<Running>> for RedHatBoyStateMachine {
     fn from(state: RedHatBoyState<Running>) -> Self {
         RedHatBoyStateMachine::Running(state)
@@ -270,6 +328,7 @@ impl From<RedHatBoyState<Running>> for RedHatBoyStateMachine {
 }
 
 pub enum Event {
+    Knockout,
     Slide,
     Update,
     Jump,
@@ -286,6 +345,7 @@ impl RedHatBoyStateMachine {
             RedHatBoyStateMachine::Running(state) => &state.context(),
             RedHatBoyStateMachine::Sliding(state) => &state.context(),
             RedHatBoyStateMachine::Jumping(state) => &state.context(),
+            RedHatBoyStateMachine::Knockout(state) => &state.context(),
         }
     }
 
@@ -298,6 +358,7 @@ impl RedHatBoyStateMachine {
             RedHatBoyStateMachine::Idle(state) => &state.frame_name(),
             RedHatBoyStateMachine::Running(state) => &state.frame_name(),
             RedHatBoyStateMachine::Sliding(state) => &state.frame_name(),
+            RedHatBoyStateMachine::Knockout(state) => &state.frame_name(),
             RedHatBoyStateMachine::Jumping(state) => &state.frame_name(),
         }
     }
@@ -308,10 +369,14 @@ impl RedHatBoyStateMachine {
             (RedHatBoyStateMachine::Running(state), Event::Update) => state.update().into(),
             (RedHatBoyStateMachine::Sliding(state), Event::Update) => state.update().into(),
             (RedHatBoyStateMachine::Jumping(state), Event::Update) => state.update().into(),
+            (RedHatBoyStateMachine::Knockout(state), Event::Update) => state.update().into(),
 
             (RedHatBoyStateMachine::Running(state), Event::Slide) => state.slide().into(),
             (RedHatBoyStateMachine::Running(state), Event::Jump) => state.jump().into(),
             (RedHatBoyStateMachine::Idle(state), Event::RunRight) => state.run_right().into(),
+            (RedHatBoyStateMachine::Running(state), Event::Knockout) => state.knockout().into(),
+            (RedHatBoyStateMachine::Jumping(state), Event::Knockout) => state.knockout().into(),
+            (RedHatBoyStateMachine::Sliding(state), Event::Knockout) => state.knockout().into(),
 
             // (RedHatBoyStateMachine::Idle(state), Event::RunUp) => state.run_up().into(),
             // (RedHatBoyStateMachine::Idle(state), Event::RunDown) => state.run_down().into(),
@@ -348,6 +413,10 @@ impl RedHatBoy {
         self.state_machine = self.state_machine.transition(Event::Jump);
     }
 
+    pub fn knock_out(&mut self) {
+        self.state_machine = self.state_machine.transition(Event::Knockout);
+    }
+
     pub fn slide(&mut self) {
         self.state_machine = self.state_machine.transition(Event::Slide);
     }
@@ -376,7 +445,7 @@ impl RedHatBoy {
         self.sprite_sheet.frames.get(&self.frame_name())
     }
 
-    fn bounding_box(&self) -> models::Rect {
+    pub fn bounding_box(&self) -> models::Rect {
         let sprite = self.current_sprite().expect("Cell not found");
 
         models::Rect {
@@ -400,14 +469,7 @@ impl RedHatBoy {
                 width: sprite.frame.w.into(),
                 height: sprite.frame.h.into(),
             },
-            &models::Rect {
-                x: (self.state_machine.context().position.x + sprite.sprite_source_size.x as i16)
-                    .into(),
-                y: (self.state_machine.context().position.y + sprite.sprite_source_size.y as i16)
-                    .into(),
-                width: sprite.frame.w.into(),
-                height: sprite.frame.h.into(),
-            },
+            &self.bounding_box(),
         );
     }
 }

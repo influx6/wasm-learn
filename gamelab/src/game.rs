@@ -76,7 +76,16 @@ impl engine::Game for WalkTheDog {
             if keystate.is_pressed("ArrowLeft") {
                 walk.boy.run_left();
             }
+
             walk.boy.update();
+            if walk
+                .boy
+                .bounding_box()
+                .intersects(walk.stone.bounding_box())
+            {
+                log!("knockout occured!");
+                walk.boy.knock_out();
+            }
         }
     }
 
